@@ -463,11 +463,6 @@ class VinApp:
 # LANCEMENT DE L'APPLICATION
 
 if __name__ == "__main__":
-    # On crée la fenêtre principale
     root = tk.Tk()
-    
-    # On lance l'application
     app = VinApp(root)
-    
-    # On démarre la boucle principale Tkinter
     root.mainloop()
