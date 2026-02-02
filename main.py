@@ -48,7 +48,7 @@ class VinApp:
         header.pack(fill="x", padx=20, pady=(20, 10))
         
         titre = tk.Label(header, 
-                        text="🚗 Expert VIN & Musée Automobile",
+                        text="Expert VIN & Musée Automobile",
                         font=("Arial", 18, "bold"),
                         fg="#333333",
                         bg="#f0f0f0")
@@ -67,17 +67,17 @@ class VinApp:
         
         # Onglet 1 : Décodeur VIN
         self.tab_decoder = ttk.Frame(self.notebook)
-        self.notebook.add(self.tab_decoder, text="🔍 Décodeur VIN")
+        self.notebook.add(self.tab_decoder, text="Décodeur VIN")
         self.creer_onglet_decodeur()
         
         # Onglet 2 : Musée
         self.tab_musee = ttk.Frame(self.notebook)
-        self.notebook.add(self.tab_musee, text="🏛️ Musée")
+        self.notebook.add(self.tab_musee, text="Musée")
         self.creer_onglet_musee()
         
         # Onglet 3 : Garage
         self.tab_garage = ttk.Frame(self.notebook)
-        self.notebook.add(self.tab_garage, text="🚘 Mon Garage")
+        self.notebook.add(self.tab_garage, text="Mon Garage")
         self.creer_onglet_garage()
         
         # --- PIED DE PAGE ---
@@ -147,7 +147,7 @@ class VinApp:
         
         # Bouton Décoder (bleu)
         btn_decoder = tk.Button(inner_frame,
-                               text="🔍 Décoder le VIN",
+                               text="Décoder le VIN",
                                font=("Arial", 11, "bold"),
                                bg="#007bff",  # Bleu
                                fg="white",
@@ -159,7 +159,7 @@ class VinApp:
         
         # --- Zone de résultat ---
         resultat_label = tk.Label(main_frame,
-                                 text="📋 Fiche Technique",
+                                 text="Fiche Technique",
                                  font=("Arial", 11, "bold"),
                                  bg="#f0f0f0",
                                  fg="#333333")
@@ -203,7 +203,7 @@ class VinApp:
         # Message de chargement
         self.resultat_text.config(state="normal")
         self.resultat_text.delete(1.0, tk.END)
-        self.resultat_text.insert(tk.END, "⏳ Recherche en cours...\n")
+        self.resultat_text.insert(tk.END, "Recherche en cours...\n")
         self.resultat_text.config(state="disabled")
         self.root.update()
         
@@ -224,7 +224,7 @@ class VinApp:
             
             # On affiche la fiche
             self.resultat_text.insert(tk.END, "=" * 50 + "\n")
-            self.resultat_text.insert(tk.END, f"  ✅ VÉHICULE TROUVÉ : {vehicule.marque} {vehicule.modele}\n")
+            self.resultat_text.insert(tk.END, f"  VEHICULE TROUVE : {vehicule.marque} {vehicule.modele}\n")
             self.resultat_text.insert(tk.END, "=" * 50 + "\n\n")
             
             # On parcourt le dictionnaire pour afficher chaque info
@@ -232,9 +232,9 @@ class VinApp:
                 self.resultat_text.insert(tk.END, f"  ▸ {cle:<12} : {valeur}\n")
             
             self.resultat_text.insert(tk.END, "\n" + "-" * 50 + "\n")
-            self.resultat_text.insert(tk.END, "  ✅ Véhicule ajouté à votre garage !\n")
+            self.resultat_text.insert(tk.END, "  Vehicule ajoute a votre garage !\n")
         else:
-            self.resultat_text.insert(tk.END, f"❌ Erreur : {erreur}\n")
+            self.resultat_text.insert(tk.END, f"Erreur : {erreur}\n")
         
         self.resultat_text.config(state="disabled")
     
@@ -248,7 +248,7 @@ class VinApp:
         
         # Description
         desc_label = tk.Label(main_frame,
-                             text="🏆 Découvrez les véhicules légendaires de l'histoire automobile !",
+                             text="Découvrez les véhicules légendaires de l'histoire automobile !",
                              font=("Arial", 11),
                              bg="#f0f0f0",
                              fg="#333333")
@@ -256,7 +256,7 @@ class VinApp:
         
         # Bouton découvrir (vert)
         btn_decouvrir = tk.Button(main_frame,
-                                 text="✨ Découvrir une Légende",
+                                 text="Découvrir une Légende",
                                  font=("Arial", 12, "bold"),
                                  bg="#28a745",  # Vert
                                  fg="white",
@@ -289,16 +289,16 @@ class VinApp:
         self.legende_text.config(state="normal")
         self.legende_text.delete(1.0, tk.END)
         
-        self.legende_text.insert(tk.END, "✨" * 25 + "\n\n")
-        self.legende_text.insert(tk.END, f"  🏆 LÉGENDE DÉCOUVERTE !\n\n")
+        self.legende_text.insert(tk.END, "=" * 50 + "\n\n")
+        self.legende_text.insert(tk.END, f"  LEGENDE DECOUVERTE !\n\n")
         self.legende_text.insert(tk.END, f"  {vehicule.marque} {vehicule.modele} ({vehicule.annee})\n")
         self.legende_text.insert(tk.END, "-" * 50 + "\n\n")
         
         for cle, valeur in vehicule.to_dict().items():
             self.legende_text.insert(tk.END, f"  ▸ {cle:<12} : {valeur}\n")
         
-        self.legende_text.insert(tk.END, "\n" + "✨" * 25 + "\n")
-        self.legende_text.insert(tk.END, "\n  ✅ Véhicule ajouté à votre garage !\n")
+        self.legende_text.insert(tk.END, "\n" + "=" * 50 + "\n")
+        self.legende_text.insert(tk.END, "\n  Vehicule ajoute a votre garage !\n")
         
         self.legende_text.config(state="disabled")
     
@@ -315,14 +315,14 @@ class VinApp:
         header.pack(fill="x", pady=(0, 10))
         
         self.label_compteur_garage = tk.Label(header,
-                                              text="🚘 Mon Garage (0 véhicules)",
+                                              text="Mon Garage (0 vehicules)",
                                               font=("Arial", 12, "bold"),
                                               bg="#f0f0f0",
                                               fg="#333333")
         self.label_compteur_garage.pack(side="left")
         
         btn_vider = tk.Button(header,
-                             text="🗑️ Vider le garage",
+                             text="Vider le garage",
                              font=("Arial", 9),
                              bg="#6c757d",  # Gris
                              fg="white",
@@ -359,7 +359,7 @@ class VinApp:
         
         # --- CADRE STATISTIQUES ---
         stats_frame = tk.LabelFrame(main_frame,
-                                    text="📊 Statistiques du Garage",
+                                    text="Statistiques du Garage",
                                     font=("Arial", 10, "bold"),
                                     bg="#f0f0f0",
                                     fg="#333333")
@@ -370,7 +370,7 @@ class VinApp:
         
         # Label pour le nombre de véhicules
         self.stat_nombre = tk.Label(inner_stats,
-                                    text="📦 Véhicules scannés : 0",
+                                    text="Vehicules scannes : 0",
                                     font=("Arial", 10),
                                     bg="#f0f0f0",
                                     fg="#333333")
@@ -378,7 +378,7 @@ class VinApp:
         
         # Label pour la puissance moyenne
         self.stat_puissance = tk.Label(inner_stats,
-                                       text="⚡ Puissance moyenne : 0 HP",
+                                       text="Puissance moyenne : 0 HP",
                                        font=("Arial", 10),
                                        bg="#f0f0f0",
                                        fg="#333333")
@@ -386,7 +386,7 @@ class VinApp:
         
         # Label pour le pays le plus fréquent
         self.stat_pays = tk.Label(inner_stats,
-                                  text="🌍 Pays le plus fréquent : Aucun",
+                                  text="Pays le plus frequent : Aucun",
                                   font=("Arial", 10),
                                   bg="#f0f0f0",
                                   fg="#333333")
@@ -397,7 +397,7 @@ class VinApp:
         
         # Mise à jour du compteur
         nb = len(self.garage_virtuel)
-        self.label_compteur_garage.config(text=f"🚘 Mon Garage ({nb} véhicules)")
+        self.label_compteur_garage.config(text=f"Mon Garage ({nb} vehicules)")
         
         # Mise à jour du Treeview
         for item in self.garage_tree.get_children():
@@ -415,9 +415,9 @@ class VinApp:
         # Mise à jour des statistiques
         stats = calculer_statistiques(self.garage_virtuel)
         
-        self.stat_nombre.config(text=f"📦 Véhicules scannés : {stats['nombre']}")
-        self.stat_puissance.config(text=f"⚡ Puissance moyenne : {stats['puissance_moyenne']} HP")
-        self.stat_pays.config(text=f"🌍 Pays le plus fréquent : {stats['pays_frequent']}")
+        self.stat_nombre.config(text=f"Vehicules scannes : {stats['nombre']}")
+        self.stat_puissance.config(text=f"Puissance moyenne : {stats['puissance_moyenne']} HP")
+        self.stat_pays.config(text=f"Pays le plus frequent : {stats['pays_frequent']}")
     
     def voir_details(self, event):
         """Affiche les détails d'un véhicule sélectionné."""
