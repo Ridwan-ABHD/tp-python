@@ -1,7 +1,6 @@
 import requests
 import random
 
-
 # --- CLASSE VEHICULE 
 class Vehicule:
     """
@@ -91,30 +90,6 @@ musee_legendes = [
     },
     {
         "data": {
-            "Make": "Shelby",
-            "Model": "AC Cobra",
-            "Model Year": "1965",
-            "Plant Country": "UK/USA",
-            "Displacement (L)": "7.0",
-            "Engine HP": "425",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "Un châssis anglais léger avec un énorme V8 américain."
-    },
-    {
-        "data": {
-            "Make": "Tesla",
-            "Model": "Roadster",
-            "Model Year": "2008",
-            "Plant Country": "USA",
-            "Displacement (L)": "0.0",
-            "Engine HP": "248",
-            "Fuel Type - Primary": "Électrique"
-        },
-        "anecdote": "Le premier modèle de Tesla, basé sur un châssis de Lotus Elise."
-    },
-    {
-        "data": {
             "Make": "Porsche",
             "Model": "911 Carrera",
             "Model Year": "1973",
@@ -124,6 +99,78 @@ musee_legendes = [
             "Fuel Type - Primary": "Essence"
         },
         "anecdote": "La 911 RS 2.7 est considérée comme l'une des meilleures Porsche jamais produites."
+    },
+    {
+        "data": {
+            "Make": "Mercedes",
+            "Model": "A45S",
+            "Model Year": "2020",
+            "Plant Country": "Allemagne",
+            "Displacement (L)": "2.0",
+            "Engine HP": "421",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "La compacte la plus puissante du marché."
+    },
+    {
+        "data": {
+            "Make": "Volkswagen",
+            "Model": "Golf 8R",
+            "Model Year": "2021",
+            "Plant Country": "Allemagne",
+            "Displacement (L)": "2.0",
+            "Engine HP": "320",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "La reine des compactes sportives polyvalentes."
+    },
+    {
+        "data": {
+            "Make": "Mercedes",
+            "Model": "GT63s",
+            "Model Year": "2019",
+            "Plant Country": "Allemagne",
+            "Displacement (L)": "4.0",
+            "Engine HP": "639",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Une véritable supercar déguisée en berline familiale."
+    },
+    {
+        "data": {
+            "Make": "Citroen",
+            "Model": "Saxo VTS",
+            "Model Year": "1999",
+            "Plant Country": "France",
+            "Displacement (L)": "1.6",
+            "Engine HP": "120",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Le modèle légendaire de notre ami Mathis."
+    },
+    {
+        "data": {
+            "Make": "Lamborghini",
+            "Model": "Urus",
+            "Model Year": "2018",
+            "Plant Country": "Italie",
+            "Displacement (L)": "4.0",
+            "Engine HP": "650",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Le SUV qui a redéfini les performances sportives."
+    },
+    {
+        "data": {
+            "Make": "Renault",
+            "Model": "Scénic 3 1.5 dCi",
+            "Model Year": "2016",
+            "Plant Country": "France",
+            "Displacement (L)": "1.5",
+            "Engine HP": "110",
+            "Fuel Type - Primary": "Diesel"
+        },
+        "anecdote": "Le fameux 'Scénic du Seigneur', increvable et iconique."
     }
 ]
 
