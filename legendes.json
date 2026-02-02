@@ -1,0 +1,122 @@
+[
+    {
+        "data": {
+            "Make": "Ferrari",
+            "Model": "F40",
+            "Model Year": "1987",
+            "Plant Country": "Italie",
+            "Displacement (L)": "2.9",
+            "Engine HP": "478",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "La dernière voiture validée par Enzo Ferrari de son vivant."
+    },
+    {
+        "data": {
+            "Make": "DeLorean",
+            "Model": "DMC-12",
+            "Model Year": "1981",
+            "Plant Country": "Irlande du Nord",
+            "Displacement (L)": "2.8",
+            "Engine HP": "130",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Célèbre pour son rôle de machine à voyager dans le temps au cinéma."
+    },
+    {
+        "data": {
+            "Make": "Shelby",
+            "Model": "AC Cobra",
+            "Model Year": "1965",
+            "Plant Country": "USA/UK",
+            "Displacement (L)": "7.0",
+            "Engine HP": "425",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Un châssis anglais léger avec un énorme V8 américain."
+    },
+    {
+        "data": {
+            "Make": "Tesla",
+            "Model": "Roadster",
+            "Model Year": "2008",
+            "Plant Country": "USA",
+            "Displacement (L)": "0.0",
+            "Engine HP": "248",
+            "Fuel Type - Primary": "Électrique"
+        },
+        "anecdote": "Le premier modèle de Tesla, basé sur un châssis de Lotus Elise."
+    },
+    {
+        "data": {
+            "Make": "Mercedes",
+            "Model": "A45S",
+            "Model Year": "2023",
+            "Plant Country": "Allemagne",
+            "Displacement (L)": "2.0",
+            "Engine HP": "421",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "La compacte la plus puissante du marché."
+    },
+    {
+        "data": {
+            "Make": "Volkswagen",
+            "Model": "Golf 8R",
+            "Model Year": "2022",
+            "Plant Country": "Allemagne",
+            "Displacement (L)": "2.0",
+            "Engine HP": "320",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "La reine des compactes sportives polyvalentes."
+    },
+    {
+        "data": {
+            "Make": "Mercedes",
+            "Model": "GT63s",
+            "Model Year": "2021",
+            "Plant Country": "Allemagne",
+            "Displacement (L)": "4.0",
+            "Engine HP": "639",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Une véritable supercar déguisée en berline familiale."
+    },
+    {
+        "data": {
+            "Make": "Citroen",
+            "Model": "Saxo VTS",
+            "Model Year": "1999",
+            "Plant Country": "France",
+            "Displacement (L)": "1.6",
+            "Engine HP": "120",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Le modèle légendaire de notre ami Mathis."
+    },
+    {
+        "data": {
+            "Make": "Lamborghini",
+            "Model": "Urus",
+            "Model Year": "2022",
+            "Plant Country": "Italie",
+            "Displacement (L)": "4.0",
+            "Engine HP": "650",
+            "Fuel Type - Primary": "Essence"
+        },
+        "anecdote": "Le SUV qui a redéfini les performances sportives."
+    },
+    {
+        "data": {
+            "Make": "Renault",
+            "Model": "Scénic 3 1.5 dCi",
+            "Model Year": "2016",
+            "Plant Country": "France",
+            "Displacement (L)": "1.5",
+            "Engine HP": "110",
+            "Fuel Type - Primary": "Diesel"
+        },
+        "anecdote": "Le fameux 'Scénic du Seigneur', increvable et iconique."
+    }
+]

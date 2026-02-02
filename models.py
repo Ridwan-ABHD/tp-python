@@ -1,5 +1,6 @@
 import requests
 import random
+import json
 
 # --- CLASSE VEHICULE 
 class Vehicule:
@@ -62,117 +63,30 @@ def recuperer_infos_api(vin):
         return None, f"Erreur réseau : {e}"
 
 
-# --- MUSÉE DES LÉGENDES (utilise une LISTE de DICTIONNAIRES) ---
-musee_legendes = [
-    {
-        "data": {
-            "Make": "Ferrari",
-            "Model": "F40",
-            "Model Year": "1987",
-            "Plant Country": "Italie",
-            "Displacement (L)": "2.9",
-            "Engine HP": "478",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "La dernière voiture validée par Enzo Ferrari de son vivant."
-    },
-    {
-        "data": {
-            "Make": "DeLorean",
-            "Model": "DMC-12",
-            "Model Year": "1981",
-            "Plant Country": "Irlande du Nord",
-            "Displacement (L)": "2.8",
-            "Engine HP": "130",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "Célèbre pour son rôle de machine à voyager dans le temps au cinéma."
-    },
-    {
-        "data": {
-            "Make": "Porsche",
-            "Model": "911 Carrera",
-            "Model Year": "1973",
-            "Plant Country": "Allemagne",
-            "Displacement (L)": "2.7",
-            "Engine HP": "210",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "La 911 RS 2.7 est considérée comme l'une des meilleures Porsche jamais produites."
-    },
-    {
-        "data": {
-            "Make": "Mercedes",
-            "Model": "A45S",
-            "Model Year": "2020",
-            "Plant Country": "Allemagne",
-            "Displacement (L)": "2.0",
-            "Engine HP": "421",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "La compacte la plus puissante du marché."
-    },
-    {
-        "data": {
-            "Make": "Volkswagen",
-            "Model": "Golf 8R",
-            "Model Year": "2021",
-            "Plant Country": "Allemagne",
-            "Displacement (L)": "2.0",
-            "Engine HP": "320",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "La reine des compactes sportives polyvalentes."
-    },
-    {
-        "data": {
-            "Make": "Mercedes",
-            "Model": "GT63s",
-            "Model Year": "2019",
-            "Plant Country": "Allemagne",
-            "Displacement (L)": "4.0",
-            "Engine HP": "639",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "Une véritable supercar déguisée en berline familiale."
-    },
-    {
-        "data": {
-            "Make": "Citroen",
-            "Model": "Saxo VTS",
-            "Model Year": "1999",
-            "Plant Country": "France",
-            "Displacement (L)": "1.6",
-            "Engine HP": "120",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "Le modèle légendaire de notre ami Mathis."
-    },
-    {
-        "data": {
-            "Make": "Lamborghini",
-            "Model": "Urus",
-            "Model Year": "2018",
-            "Plant Country": "Italie",
-            "Displacement (L)": "4.0",
-            "Engine HP": "650",
-            "Fuel Type - Primary": "Essence"
-        },
-        "anecdote": "Le SUV qui a redéfini les performances sportives."
-    },
-    {
-        "data": {
-            "Make": "Renault",
-            "Model": "Scénic 3 1.5 dCi",
-            "Model Year": "2016",
-            "Plant Country": "France",
-            "Displacement (L)": "1.5",
-            "Engine HP": "110",
-            "Fuel Type - Primary": "Diesel"
-        },
-        "anecdote": "Le fameux 'Scénic du Seigneur', increvable et iconique."
-    }
-]
+# --- FONCTION POUR CHARGER LE MUSÉE DEPUIS LE FICHIER JSON ---
+def charger_musee():
+    """
+    Charge la liste des véhicules légendaires depuis le fichier legendes.json.
+    Utilise la librairie JSON pour lire le fichier.
+    Retourne une liste vide si le fichier n'existe pas.
+    """
+    try:
+        # On ouvre le fichier JSON en lecture avec encodage UTF-8
+        with open("legendes.json", "r", encoding="utf-8") as fichier:
+            musee = json.load(fichier)
+        return musee
+    except FileNotFoundError:
+        # Si le fichier n'existe pas, on retourne une liste vide
+        print("Attention : fichier legendes.json introuvable.")
+        return []
+    except Exception as e:
+        # En cas d'autre erreur, on affiche le message
+        print(f"Erreur lors du chargement du musée : {e}")
+        return []
+
+
+# --- MUSÉE DES LÉGENDES (chargé depuis le fichier JSON) ---
+musee_legendes = charger_musee()
 
 
 # --- FONCTION RANDOM

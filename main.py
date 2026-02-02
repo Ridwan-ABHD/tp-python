@@ -238,9 +238,7 @@ class VinApp:
         
         self.resultat_text.config(state="disabled")
     
-    # =========================================================================
     # ONGLET MUSÉE
-    # =========================================================================
     
     def creer_onglet_musee(self):
         """Crée l'onglet Musée des légendes."""
