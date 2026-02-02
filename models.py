@@ -2,7 +2,6 @@ import requests
 import random
 import json
 
-# --- CLASSE VEHICULE 
 class Vehicule:
     """
     Représente un véhicule avec ses caractéristiques.
@@ -34,7 +33,7 @@ class Vehicule:
         }
 
 
-# --- FONCTION API (utilise la librairie REQUESTS) ---
+# FONCTION API  
 def recuperer_infos_api(vin):
     """
     Appelle l'API NHTSA pour décoder un numéro VIN.
@@ -43,17 +42,17 @@ def recuperer_infos_api(vin):
     url = f"https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/{vin}?format=json"
     
     try:
-        # On fait la requête HTTP avec un timeout de 10 secondes
+        # timeout 
         response = requests.get(url, timeout=10)
         data = response.json()
         
-        # On transforme la réponse en dictionnaire simple
+        # reponse en dictionnaire
         resultats = {}
         for item in data.get('Results', []):
-            if item['Value']:  # On garde seulement les valeurs non vides
+            if item['Value']:  # seulement valeur non vides
                 resultats[item['Variable']] = item['Value']
         
-        # On vérifie si le VIN est valide
+        # verif vin
         if resultats.get("Error Code") != "0":
             return None, resultats.get('Error Text', 'VIN invalide')
         
@@ -63,44 +62,42 @@ def recuperer_infos_api(vin):
         return None, f"Erreur réseau : {e}"
 
 
-# --- FONCTION POUR CHARGER LE MUSÉE DEPUIS LE FICHIER JSON ---
+# CHARGEMENT FICHIER JSON
 def charger_musee():
     """
     Charge la liste des véhicules légendaires depuis le fichier legendes.json.
-    Utilise la librairie JSON pour lire le fichier.
-    Retourne une liste vide si le fichier n'existe pas.
+
     """
     try:
-        # On ouvre le fichier JSON en lecture avec encodage UTF-8
+        # Ouverture du fichier JSON
         with open("legendes.json", "r", encoding="utf-8") as fichier:
             musee = json.load(fichier)
         return musee
     except FileNotFoundError:
-        # Si le fichier n'existe pas, on retourne une liste vide
+        # Si le fichier n'existe pas
         print("Attention : fichier legendes.json introuvable.")
         return []
     except Exception as e:
-        # En cas d'autre erreur, on affiche le message
+        # En cas d'autre erreur
         print(f"Erreur lors du chargement du musée : {e}")
         return []
 
 
-# --- MUSÉE DES LÉGENDES (chargé depuis le fichier JSON) ---
+# MUSÉE DES LÉGENDES (chargé depuis le fichier JSON) 
 musee_legendes = charger_musee()
 
 
-# --- FONCTION RANDOM
+# FONCTION RANDOM
 def piocher_legende():
     """
     Pioche un véhicule au hasard dans le musée.
-    Utilise random.choice() pour la sélection aléatoire.
     """
     legende = random.choice(musee_legendes)
     vehicule = Vehicule(legende["data"], legende["anecdote"])
     return vehicule
 
 
-# --- FONCTIONS STATISTIQUES ---
+# FONCTIONS STATISTIQUES
 def calculer_statistiques(liste_vehicules):
     """
     Calcule les statistiques du garage.
@@ -123,12 +120,12 @@ def calculer_statistiques(liste_vehicules):
     
     for vehicule in liste_vehicules:
         try:
-            # On essaie de convertir les chevaux en nombre
+            # Cheuvaux en nombre
             chevaux = float(vehicule.chevaux)
             total_chevaux = total_chevaux + chevaux
             compteur_valide = compteur_valide + 1
         except:
-            # Si la conversion échoue, on ignore ce véhicule
+            # ignore si non convertible
             pass
     
     if compteur_valide > 0:
@@ -137,7 +134,7 @@ def calculer_statistiques(liste_vehicules):
         puissance_moyenne = 0
     
     # Trouver le pays le plus fréquent
-    compteur_pays = {}  # Dictionnaire pour compter les pays
+    compteur_pays = {}  
     
     for vehicule in liste_vehicules:
         pays = vehicule.pays
